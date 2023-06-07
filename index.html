@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/09f3b8e4d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="todo-container">
+        <div class="todo-header">
+            <h1 class="todo-heading">To Do List</h1>
+            <div class="todo-header__tools">
+                <div class="todo-header__inputs">
+                    <span>
+                        <label for="taskname" class="todo-header__label">Taks Name:</label>
+                        <input type="text" name="taskname" class="todo-header__input" placeholder="Insert task name...">
+                    </span>
+                    <span>
+                        <label for="taskdate" class="todo-header__label">Task Date:</label>
+                        <input type="date" name="taskdate" class="todo-header__input">
+                    </span>
+                </div>
+                <button class="btn btn-add">Add</button>
+            </div>
+        </div>
+        <div class="todo-list">
+            <h3 class="todo-list__heading">Task List:</h3>
+            <p class="error-info"></p>
+            <ul>
+                <li class="todo-list__task">
+                    <p class="todo-list__task-name">Zrobić śniadanie aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    <p class="todo-list__task-date">[30.06.2023]</p>
+                    <div class="task-btns">
+                        <button class="btn task-btn btn-check"><i class="fa-solid fa-circle-check"></i></button>
+                        <button class="btn task-btn btn-edit">EDIT</button>
+                        <button class="btn task-btn btn-delete"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </li>
+                <li class="todo-list__task">
+                    <p class="todo-list__task-name">Wypić kawę</p>
+                    <p class="todo-list__task-date">[01.07.2023]</p>
+                    <div class="task-btns">
+                        <button class="btn task-btn btn-check"><i class="fa-regular fa-circle"></i></button>
+                        <button class="btn task-btn btn-edit">EDIT</button>
+                        <button class="btn task-btn btn-delete"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
