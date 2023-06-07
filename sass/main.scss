@@ -54,7 +54,7 @@ ul {
 	.todo-heading {
 		text-align: center;
 		margin: 10px 0 20px 0;
-		font-size: 2.2em;
+		font-size: 3.1rem;
 	}
 
 	.todo-header__tools {
@@ -145,10 +145,15 @@ ul {
 		justify-content: space-between;
 		align-items: center;
 		margin: 10px 16px;
-		padding: 22px 10px 6px 16px;
+		// padding: 22px 10px 6px 16px;
+		padding: 22px 13px 6px 13px;
 		background-color: $light;
 		font-size: 1.8rem;
 		font-weight: 300;
+		// wordwrap
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		hyphens: auto;
 
 		.todo-list__task-name {
 			margin-bottom: 5px;
@@ -212,11 +217,71 @@ ul {
 			}
 		}
 	}
+
+	.todo-list {
+		.todo-list__task {
+			padding: 22px;
+			padding-bottom: 6px;
+
+			.task-btn {
+				padding: 12px 37px;
+			}
+		}
+	}
 }
 
 @media (min-width: 576px) {
 	.todo-container {
 		width: 526px;
+	}
+
+	.todo-header {
+		.todo-heading {
+			font-size: 3.5rem;
+		}
+
+		.todo-header__inputs {
+			margin: 0 auto;
+			width: 94%;
+
+			.todo-header__label {
+				width: 22%;
+				font-size: 1.8rem;
+			}
+
+			.todo-header__input {
+				width: 78%;
+				height: 30px;
+				font-size: 1.7rem;
+			}
+		}
+
+		.btn-add {
+			width: 80%;
+		}
+	}
+
+	.todo-list {
+		.todo-list__heading {
+			font-size: 2.5rem;
+		}
+
+		.todo-list__task {
+			padding: 28px 32px 10px 32px;
+
+			.todo-list__task-name {
+				font-size: 2rem;
+			}
+
+			.todo-list__task-date {
+				font-size: 1.6rem;
+			}
+
+			.task-btn {
+				padding: 12px 60px;
+				font-size: 1.9rem;
+			}
+		}
 	}
 }
 
