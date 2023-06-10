@@ -51,8 +51,6 @@ ul {
 }
 .todo-header .todo-header__tools {
   display: block;
-  align-items: center;
-  justify-content: space-around;
 }
 .todo-header .todo-header__inputs {
   width: 100%;
@@ -75,7 +73,7 @@ ul {
   text-align: center;
   border: none;
   border-radius: 6px;
-  background-color: #f9f4ff;
+  background-color: #f0e8fb;
   font-family: inherit;
   font-size: 1.5rem;
 }
@@ -88,7 +86,7 @@ ul {
   width: 94%;
   border-radius: 6px;
   text-transform: uppercase;
-  background-color: #f9f4ff;
+  background-color: #f0e8fb;
   color: #2c005f;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -122,13 +120,16 @@ ul {
   align-items: center;
   margin: 10px 16px;
   padding: 22px 13px 6px 13px;
-  background-color: #f9f4ff;
+  background-color: #f0e8fb;
   font-size: 1.8rem;
   font-weight: 300;
   overflow-wrap: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
           hyphens: auto;
+}
+.todo-list .todo-list__task .todo-list__task-text {
+  text-align: center;
 }
 .todo-list .todo-list__task .todo-list__task-name {
   margin-bottom: 5px;
@@ -152,7 +153,7 @@ ul {
   transition: background-color 0.3s;
 }
 .todo-list .todo-list__task .task-btn:hover {
-  background-color: #ecddff;
+  background-color: #d5cae4;
 }
 .todo-list .todo-list__task .btn-check {
   color: #5800bd;
@@ -225,6 +226,47 @@ ul {
 @media (min-width: 768px) {
   .todo-container {
     width: 700px;
+  }
+  .todo-header .todo-heading {
+    font-size: 3.8rem;
+    margin-bottom: 26px;
+  }
+  .todo-header .todo-header__tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 92%;
+  }
+  .todo-header .todo-header__inputs {
+    display: flex;
+    flex-direction: column;
+    width: 82%;
+  }
+  .todo-header .btn-add {
+    margin: 0;
+    margin-left: 32px;
+    padding: 18px 0;
+    width: 16%;
+    left: unset;
+    transform: translateX(0);
+    font-size: 1.7rem;
+  }
+  .todo-list .todo-list__task {
+    flex-direction: row;
+    padding: 0 5px 0 32px;
+  }
+  .todo-list .todo-list__task .todo-list__task-text {
+    width: 70%;
+  }
+  .todo-list .todo-list__task .todo-list__task-date {
+    margin-bottom: 0;
+  }
+  .todo-list .todo-list__task .todo-list__task-btns {
+    width: 0;
+  }
+  .todo-list .todo-list__task .task-btn {
+    padding: 40px 20px;
   }
 }
 @media (min-width: 992px) {
