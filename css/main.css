@@ -307,7 +307,7 @@ ul {
   .todo-list .todo-list__task {
     padding-right: 7px;
   }
-  .todo-list .todo-list__task .todo-list__task-text {
+  .todo-list .todo-list__task .todo-list__task-name {
     font-size: 2rem;
   }
   .todo-list .todo-list__task .todo-list__task-date {
@@ -321,5 +321,37 @@ ul {
 @media (min-width: 1200px) {
   .todo-container {
     width: 1000px;
+  }
+  .todo-header .todo-heading {
+    font-size: 4.4rem;
+    margin: 15px 0 24px 0;
+  }
+  .todo-header .todo-header__tools {
+    width: 87%;
+  }
+  .todo-header .todo-header__inputs .todo-header__label {
+    height: 36px;
+    font-size: 2.2rem;
+  }
+  .todo-header .todo-header__inputs .todo-header__input {
+    height: 36px;
+    font-size: 2.1rem;
+  }
+  .todo-header .btn-add {
+    margin-left: 48px;
+    font-size: 1.9rem;
+  }
+  .todo-list .todo-list__heading {
+    font-size: 3rem;
+  }
+  .todo-list .todo-list__task .todo-list__task-name {
+    font-size: 2.2rem;
+  }
+  .todo-list .todo-list__task .todo-list__task-date {
+    font-size: 1.9rem;
+  }
+  .todo-list .todo-list__task .task-btn {
+    padding: 40px 26px;
+    font-size: 2.1rem;
   }
 }/*# sourceMappingURL=main.css.map */
