@@ -216,7 +216,7 @@ ul {
     font-size: 2rem;
   }
   .todo-list .todo-list__task .todo-list__task-date {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
   .todo-list .todo-list__task .task-btn {
     padding: 12px 60px;
@@ -243,6 +243,14 @@ ul {
     flex-direction: column;
     width: 82%;
   }
+  .todo-header .todo-header__inputs .todo-header__label {
+    height: 32px;
+    font-size: 1.9rem;
+  }
+  .todo-header .todo-header__inputs .todo-header__input {
+    height: 32px;
+    font-size: 1.8rem;
+  }
   .todo-header .btn-add {
     margin: 0;
     margin-left: 32px;
@@ -251,6 +259,9 @@ ul {
     left: unset;
     transform: translateX(0);
     font-size: 1.7rem;
+  }
+  .todo-list .todo-list__heading {
+    font-size: 2.7rem;
   }
   .todo-list .todo-list__task {
     flex-direction: row;

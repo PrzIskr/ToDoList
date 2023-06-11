@@ -276,7 +276,7 @@ ul {
 			}
 
 			.todo-list__task-date {
-				font-size: 1.6rem;
+				font-size: 1.7rem;
 			}
 
 			.task-btn {
@@ -310,6 +310,16 @@ ul {
 			display: flex;
 			flex-direction: column;
 			width: 82%;
+
+			.todo-header__label {
+				height: 32px;
+				font-size: 1.9rem;
+			}
+
+			.todo-header__input {
+				height: 32px;
+				font-size: 1.8rem;
+			}
 		}
 
 		.btn-add {
@@ -324,6 +334,10 @@ ul {
 	}
 
 	.todo-list {
+		.todo-list__heading {
+			font-size: 2.7rem;
+		}
+
 		.todo-list__task {
 			flex-direction: row;
 			padding: 0 5px 0 32px;
