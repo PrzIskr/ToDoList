@@ -20,7 +20,7 @@
             <div class="todo-header__tools">
                 <div class="todo-header__inputs">
                     <span>
-                        <label for="taskname" class="todo-header__label">Taks Name:</label>
+                        <label for="taskname" class="todo-header__label">Task Name:</label>
                         <input type="text" name="taskname" class="todo-header__input" placeholder="Insert task name...">
                     </span>
                     <span>
@@ -61,7 +61,23 @@
         </div>
     </div>
 
-
+    <div class="edit-task-mobile">
+        <h3 class="edit-task-mobile__header">Edit Task</h3>
+        <div class="edit-task-mobile__inputs">
+            <span>
+                <label for="taskname" class="edit-task-mobile__label">Task Name:</label>
+                <input type="text" name="taskname" class="edit-task-mobile__input" placeholder="Insert task name...">
+            </span>
+            <span>
+                <label for="taskdate" class="edit-task-mobile__label">Task Date:</label>
+                <input type="date" name="taskdate" class="edit-task-mobile__input">
+            </span>
+        </div>
+        <div class="edit-task-mobile__btns">
+            <button class="btn edit-task__btn">Apply</button>
+            <button class="btn edit-task__btn">Cancel</button>
+        </div>
+    </div>
 
     <script src="./js/main.js"></script>
 </body>
