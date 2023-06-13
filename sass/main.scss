@@ -506,11 +506,11 @@ ul {
 			padding-right: 7px;
 
 			.todo-list__task-name {
-				font-size: 2rem;
+				font-size: 2.1rem;
 			}
 
 			.todo-list__task-date {
-				font-size: 1.8rem;
+				font-size: 1.9rem;
 			}
 
 			.task-btn {
@@ -536,21 +536,23 @@ ul {
 			width: 87%;
 		}
 
+		/*
 		.todo-header__inputs {
 			.todo-header__label {
 				height: 36px;
-				font-size: 2.2rem;
+				font-size: 2.1rem;
 			}
 
 			.todo-header__input {
 				height: 36px;
-				font-size: 2.1rem;
+				font-size: 2rem;
 			}
 		}
+		*/
 
 		.btn-add {
 			margin-left: 48px;
-			font-size: 1.9rem;
+			// font-size: 1.9rem;
 		}
 	}
 
@@ -562,21 +564,6 @@ ul {
 		.error-info {
 			margin: 8px 0 22px 0;
 			font-size: 2.3rem;
-		}
-
-		.todo-list__task {
-			.todo-list__task-name {
-				font-size: 2.2rem;
-			}
-
-			.todo-list__task-date {
-				font-size: 1.9rem;
-			}
-
-			.task-btn {
-				padding: 40px 26px;
-				font-size: 2.1rem;
-			}
 		}
 	}
 }
