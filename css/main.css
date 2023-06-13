@@ -185,6 +185,7 @@ ul {
   background: rgb(44, 0, 95);
   background: linear-gradient(0deg, rgb(233, 68, 110) 0%, rgb(44, 0, 95) 100%);
   color: #fff;
+  transform: translateX(-102%);
   transition: transform 0.3s;
   z-index: 10;
 }
