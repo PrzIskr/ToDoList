@@ -1,0 +1,32 @@
+@media (min-width: 375px) {
+	.todo-container {
+		width: 355px;
+	}
+
+	.todo-header {
+		.todo-header__inputs {
+			.todo-header__label {
+				width: 25%;
+			}
+
+			.todo-header__input {
+				width: 75%;
+			}
+		}
+	}
+
+	.todo-list {
+		.error-info {
+			font-size: 1.9rem;
+		}
+
+		.todo-list__task {
+			padding: 22px;
+			padding-bottom: 6px;
+
+			.task-btn {
+				padding: 12px 37px;
+			}
+		}
+	}
+}

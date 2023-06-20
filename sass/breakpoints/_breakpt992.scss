@@ -1,0 +1,59 @@
+@media (min-width: 992px) {
+	.todo-container {
+		width: 840px;
+	}
+
+	.todo-header {
+		.todo-heading {
+			font-size: 4rem;
+		}
+
+		.todo-header__tools {
+			width: 88%;
+		}
+
+		.todo-header__inputs {
+			.todo-header__label {
+				height: 34px;
+				font-size: 2rem;
+			}
+
+			.todo-header__input {
+				height: 34px;
+				font-size: 1.9rem;
+			}
+		}
+
+		.btn-add {
+			margin-left: 46px;
+			font-size: 1.8rem;
+		}
+	}
+
+	.todo-list {
+		.todo-list__heading {
+			font-size: 2.8rem;
+		}
+
+		.error-info {
+			font-size: 2.2rem;
+		}
+
+		.todo-list__task {
+			padding-right: 7px;
+
+			.todo-list__task-name {
+				font-size: 2.1rem;
+			}
+
+			.todo-list__task-date {
+				font-size: 1.9rem;
+			}
+
+			.task-btn {
+				padding: 40px 24px;
+				font-size: 2rem;
+			}
+		}
+	}
+}
