@@ -55,4 +55,30 @@
 			}
 		}
 	}
+
+	.edit-task-mobile {
+		.edit-task-mobile__header {
+			font-size: 3.9rem;
+		}
+
+		.edit-task-mobile__label {
+			margin-right: 16px;
+			font-size: 1.9rem;
+		}
+
+		.edit-task-mobile__input {
+			height: 32px;
+			font-size: 1.7rem;
+		}
+
+		.edit-task-mobile__btns {
+			margin-top: 22px;
+		}
+
+		.edit-task__btn {
+			margin: 0 18px;
+			padding: 14px 42px;
+			font-size: 1.7rem;
+		}
+	}
 }
