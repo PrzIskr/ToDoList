@@ -185,7 +185,6 @@ ul {
   background: rgb(44, 0, 95);
   background: linear-gradient(0deg, rgb(233, 68, 110) 0%, rgb(44, 0, 95) 100%);
   color: #fff;
-  transform: translateX(-102%);
   transition: transform 0.3s;
   z-index: 10;
 }
@@ -257,6 +256,23 @@ ul {
   }
   .todo-list .todo-list__task .task-btn {
     padding: 12px 37px;
+  }
+  .edit-task-mobile .edit-task-mobile__header {
+    font-size: 3.4rem;
+  }
+  .edit-task-mobile .edit-task-mobile__label {
+    font-size: 1.7rem;
+  }
+  .edit-task-mobile .edit-task-mobile__input {
+    height: 30px;
+    font-size: 1.6rem;
+  }
+  .edit-task-mobile .edit-task-mobile__btns {
+    margin-top: 16px;
+  }
+  .edit-task-mobile .edit-task__btn {
+    margin: 0 10px;
+    padding: 10px 32px;
   }
 }
 @media (min-width: 576px) {
