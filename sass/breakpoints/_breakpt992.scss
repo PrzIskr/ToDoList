@@ -58,4 +58,35 @@
 			}
 		}
 	}
+
+	.edit-task-desktop {
+		width: 840px;
+
+		.edit-task-desktop__header {
+			margin: 21px 0;
+			font-size: 3.6rem;
+		}
+
+		.edit-task-desktop__inputs {
+			width: 91%;
+		}
+
+		.edit-task-desktop__label {
+			font-size: 2rem;
+			margin-right: 20px;
+		}
+
+		.edit-task-desktop__input {
+			width: 230px;
+			height: 29px;
+			font-size: 1.8rem;
+		}
+
+		.edit-task__btn {
+			margin: 24px;
+			margin-top: 8px;
+			padding: 7px 90px;
+			font-size: 1.7rem;
+		}
+	}
 }
