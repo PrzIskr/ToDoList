@@ -60,7 +60,7 @@
 	}
 
 	.edit-task-desktop {
-		width: 840px;
+		width: 822px;
 
 		.edit-task-desktop__header {
 			margin: 21px 0;
@@ -72,8 +72,9 @@
 		}
 
 		.edit-task-desktop__label {
-			font-size: 2rem;
+			height: 29px;
 			margin-right: 20px;
+			font-size: 2rem;
 		}
 
 		.edit-task-desktop__input {

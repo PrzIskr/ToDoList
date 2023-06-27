@@ -412,7 +412,7 @@ ul {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    width: 700px;
+    width: 684px;
     transform: translateX(-50%);
     border-radius: 6px;
     overflow: hidden;
@@ -440,8 +440,9 @@ ul {
     margin: 10px 0;
   }
   .edit-task-desktop .edit-task-desktop__label {
-    font-size: 1.9rem;
+    height: 28px;
     margin-right: 12px;
+    font-size: 1.9rem;
   }
   .edit-task-desktop .edit-task-desktop__input {
     width: 190px;
@@ -512,7 +513,7 @@ ul {
     font-size: 2rem;
   }
   .edit-task-desktop {
-    width: 840px;
+    width: 822px;
   }
   .edit-task-desktop .edit-task-desktop__header {
     margin: 21px 0;
@@ -522,8 +523,9 @@ ul {
     width: 91%;
   }
   .edit-task-desktop .edit-task-desktop__label {
-    font-size: 2rem;
+    height: 29px;
     margin-right: 20px;
+    font-size: 2rem;
   }
   .edit-task-desktop .edit-task-desktop__input {
     width: 230px;
@@ -541,27 +543,15 @@ ul {
   .todo-container {
     width: 1000px;
   }
-  .todo-header {
-    /*
-    .todo-header__inputs {
-    	.todo-header__label {
-    		height: 36px;
-    		font-size: 2.1rem;
-    	}
-
-    	.todo-header__input {
-    		height: 36px;
-    		font-size: 2rem;
-    	}
-    }
-    */
-  }
   .todo-header .todo-heading {
     font-size: 4.4rem;
     margin: 15px 0 24px 0;
   }
   .todo-header .todo-header__tools {
     width: 87%;
+  }
+  .todo-header .todo-header__inputs .todo-header__label {
+    font-size: 2.1rem;
   }
   .todo-header .btn-add {
     margin-left: 48px;
@@ -572,5 +562,27 @@ ul {
   .todo-list .error-info {
     margin: 8px 0 22px 0;
     font-size: 2.3rem;
+  }
+  .edit-task-desktop {
+    width: 980px;
+  }
+  .edit-task-desktop .edit-task-desktop__header {
+    margin: 24px 0;
+    font-size: 3.8rem;
+  }
+  .edit-task-desktop .edit-task-desktop__label {
+    height: 32px;
+    margin-right: 24px;
+    font-size: 2.1rem;
+  }
+  .edit-task-desktop .edit-task-desktop__input {
+    width: 260px;
+    height: 32px;
+    font-size: 1.9rem;
+  }
+  .edit-task-desktop .edit-task__btn {
+    margin: 30px;
+    margin-top: 10px;
+    padding: 7px 130px;
   }
 }/*# sourceMappingURL=main.css.map */

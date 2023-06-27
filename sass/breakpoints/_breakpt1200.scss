@@ -15,23 +15,14 @@
 			width: 87%;
 		}
 
-		/*
 		.todo-header__inputs {
 			.todo-header__label {
-				height: 36px;
 				font-size: 2.1rem;
 			}
-
-			.todo-header__input {
-				height: 36px;
-				font-size: 2rem;
-			}
 		}
-		*/
 
 		.btn-add {
 			margin-left: 48px;
-			// font-size: 1.9rem;
 		}
 	}
 
@@ -43,6 +34,33 @@
 		.error-info {
 			margin: 8px 0 22px 0;
 			font-size: 2.3rem;
+		}
+	}
+
+	.edit-task-desktop {
+		width: 980px;
+
+		.edit-task-desktop__header {
+			margin: 24px 0;
+			font-size: 3.8rem;
+		}
+
+		.edit-task-desktop__label {
+			height: 32px;
+			margin-right: 24px;
+			font-size: 2.1rem;
+		}
+
+		.edit-task-desktop__input {
+			width: 260px;
+			height: 32px;
+			font-size: 1.9rem;
+		}
+
+		.edit-task__btn {
+			margin: 30px;
+			margin-top: 10px;
+			padding: 7px 130px;
 		}
 	}
 }

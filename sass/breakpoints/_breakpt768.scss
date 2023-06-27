@@ -88,7 +88,7 @@
 		position: fixed;
 		bottom: 20px;
 		left: 50%;
-		width: 700px;
+		width: 684px;
 		transform: translateX(-50%);
 		border-radius: 6px;
 		overflow: hidden;
@@ -119,8 +119,9 @@
 		}
 
 		.edit-task-desktop__label {
-			font-size: 1.9rem;
+			height: 28px;
 			margin-right: 12px;
+			font-size: 1.9rem;
 		}
 
 		.edit-task-desktop__input {
