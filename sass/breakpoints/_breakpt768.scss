@@ -1,3 +1,5 @@
+@use "../colors" as *;
+
 @media (min-width: 768px) {
 	.todo-container {
 		width: 700px;
@@ -70,6 +72,84 @@
 
 			.task-btn {
 				padding: 40px 20px;
+			}
+		}
+	}
+
+	.edit-task-mobile {
+		display: none;
+	}
+
+	.edit-task-desktop {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: fixed;
+		bottom: 20px;
+		left: 50%;
+		width: 700px;
+		transform: translateX(-50%);
+		border-radius: 6px;
+		overflow: hidden;
+		background-color: $main-color;
+		background: linear-gradient(0deg, $sec-c-dark 0%, $main-c-dark 100%);
+		box-shadow: 0px 0px 3px $main-color;
+		color: $white;
+		z-index: 10;
+
+		.edit-task-desktop__header {
+			margin: 20px 0;
+			font-size: 3.3rem;
+		}
+
+		.edit-task-desktop__inputs {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			width: 92%;
+		}
+
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 10px 0;
+		}
+
+		.edit-task-desktop__label {
+			font-size: 1.9rem;
+			margin-right: 12px;
+		}
+
+		.edit-task-desktop__input {
+			width: 190px;
+			height: 28px;
+			border: none;
+			border-radius: 6px;
+			font-family: inherit;
+			font-size: 1.7rem;
+			text-align: center;
+		}
+
+		.edit-task-desktop__btns {
+			margin-top: 15px;
+		}
+
+		.edit-task__btn {
+			margin: 20px;
+			margin-top: 6px;
+			padding: 5px 80px;
+			border-radius: 6px;
+			text-transform: uppercase;
+			background-color: $light;
+			color: $main-color;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover {
+				background-color: $main-c-dark;
+				color: $light-violet;
 			}
 		}
 	}

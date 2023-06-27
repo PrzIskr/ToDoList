@@ -219,15 +219,14 @@ ul {
 	align-items: center;
 	flex-direction: column;
 	padding-bottom: 50px;
-	background: rgb(44, 0, 95);
+	background-color: $main-color;
 	background: linear-gradient(
 		0deg,
 		rgb(233, 68, 110) 0%,
 		rgba(44, 0, 95, 1) 100%
 	);
 	color: $white;
-	// visibility: hidden;
-	// transform: translateX(-102%);
+	transform: translateX(-102%);
 	transition: transform 0.3s;
 	z-index: 10;
 
@@ -238,7 +237,6 @@ ul {
 	.edit-task-mobile__header {
 		margin-bottom: 20px;
 		font-size: 3.1rem;
-		// text-transform: uppercase;
 	}
 
 	span {
@@ -288,4 +286,9 @@ ul {
 			color: $light-violet;
 		}
 	}
+}
+
+// EDIT TASK DESKTOP
+.edit-task-desktop {
+	display: none;
 }

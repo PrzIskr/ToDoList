@@ -182,9 +182,10 @@ ul {
   align-items: center;
   flex-direction: column;
   padding-bottom: 50px;
-  background: rgb(44, 0, 95);
+  background-color: #2c005f;
   background: linear-gradient(0deg, rgb(233, 68, 110) 0%, rgb(44, 0, 95) 100%);
   color: #fff;
+  transform: translateX(-102%);
   transition: transform 0.3s;
   z-index: 10;
 }
@@ -235,6 +236,10 @@ ul {
 .edit-task-mobile .edit-task__btn:hover {
   background-color: #2c005f;
   color: #ecddff;
+}
+
+.edit-task-desktop {
+  display: none;
 }
 
 @media (min-width: 375px) {
@@ -395,6 +400,74 @@ ul {
   }
   .todo-list .todo-list__task .task-btn {
     padding: 40px 20px;
+  }
+  .edit-task-mobile {
+    display: none;
+  }
+  .edit-task-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: 700px;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #2c005f;
+    background: linear-gradient(0deg, #be234a 0%, #1d003d 100%);
+    box-shadow: 0px 0px 3px #2c005f;
+    color: #fff;
+    z-index: 10;
+  }
+  .edit-task-desktop .edit-task-desktop__header {
+    margin: 20px 0;
+    font-size: 3.3rem;
+  }
+  .edit-task-desktop .edit-task-desktop__inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 92%;
+  }
+  .edit-task-desktop span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  .edit-task-desktop .edit-task-desktop__label {
+    font-size: 1.9rem;
+    margin-right: 12px;
+  }
+  .edit-task-desktop .edit-task-desktop__input {
+    width: 190px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .edit-task-desktop .edit-task-desktop__btns {
+    margin-top: 15px;
+  }
+  .edit-task-desktop .edit-task__btn {
+    margin: 20px;
+    margin-top: 6px;
+    padding: 5px 80px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    background-color: #f0e8fb;
+    color: #2c005f;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .edit-task-desktop .edit-task__btn:hover {
+    background-color: #1d003d;
+    color: #ecddff;
   }
 }
 @media (min-width: 992px) {
