@@ -169,6 +169,11 @@ ul {
 			text-align: center;
 		}
 
+		.todo-list__task-name--completed {
+			color: $main-color;
+			text-decoration: line-through;
+		}
+
 		.todo-list__task-date {
 			margin-bottom: 12px;
 			font-size: 1.5rem;
