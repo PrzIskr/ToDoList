@@ -89,7 +89,7 @@
 		bottom: 20px;
 		left: 50%;
 		width: 684px;
-		transform: translateX(-50%);
+		transform: translateX(-50%) translateY(110%);
 		border-radius: 6px;
 		overflow: hidden;
 		background-color: $main-color;
@@ -97,6 +97,10 @@
 		box-shadow: 0px 0px 3px $main-color;
 		color: $white;
 		z-index: 10;
+
+		.edit-task-desktop--active {
+			transform: translateY(0);
+		}
 
 		.edit-task-desktop__header {
 			margin: 20px 0;

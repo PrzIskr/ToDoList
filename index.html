@@ -21,11 +21,12 @@
                 <div class="todo-header__inputs">
                     <span>
                         <label for="taskname" class="todo-header__label">Task Name:</label>
-                        <input type="text" name="taskname" class="todo-header__input" placeholder="Insert task name...">
+                        <input type="text" name="taskname" class="todo-header__input todo-header__input-tname"
+                            placeholder="Insert task name...">
                     </span>
                     <span>
                         <label for="taskdate" class="todo-header__label">Task Date:</label>
-                        <input type="date" name="taskdate" class="todo-header__input">
+                        <input type="date" name="taskdate" class="todo-header__input todo-header__input-tdate">
                     </span>
                 </div>
                 <button class="btn btn-add">Add</button>
@@ -33,8 +34,8 @@
         </div>
         <div class="todo-list">
             <h3 class="todo-list__heading">Task List:</h3>
-            <p class="error-info">Insert task name!</p>
-            <ul>
+            <p class="error-info"></p>
+            <ul class="todo-list__ul">
                 <li class="todo-list__task">
                     <div class="todo-list__task-text">
                         <p class="todo-list__task-name">Zrobić śniadanie bbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaa</p>

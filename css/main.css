@@ -413,7 +413,7 @@ ul {
     bottom: 20px;
     left: 50%;
     width: 684px;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(110%);
     border-radius: 6px;
     overflow: hidden;
     background-color: #2c005f;
@@ -421,6 +421,9 @@ ul {
     box-shadow: 0px 0px 3px #2c005f;
     color: #fff;
     z-index: 10;
+  }
+  .edit-task-desktop .edit-task-desktop--active {
+    transform: translateY(0);
   }
   .edit-task-desktop .edit-task-desktop__header {
     margin: 20px 0;
