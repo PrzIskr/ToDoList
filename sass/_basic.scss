@@ -213,6 +213,7 @@ ul {
 }
 
 // EDIT TASK MOBILE
+
 .edit-task-mobile {
 	position: fixed;
 	top: 0;
@@ -235,7 +236,7 @@ ul {
 	transition: transform 0.3s;
 	z-index: 10;
 
-	.edit-task-mobile--active {
+	&--active {
 		transform: translateX(0);
 	}
 

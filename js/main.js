@@ -9,6 +9,17 @@ let newTodoLiTaskDate; // task-date in recently created li
 let todoUlList; // ul inside todo-list div
 let allTasks; // all li tasks inside ul todo-list
 
+let taskToEdit; // currently edited task
+let taskToEditName; // currently edited task task-name
+let taskToEditDate; // currently edited task task-date
+let taskToEditDateStr; // currently edited task task-date string
+
+let editPopup; // edit-task popup
+let editPopupTaskName; // task-name input in edit-task popup
+let editPopupTaskDate; // task-date input in edit-task popup
+let editPopupApplyBtn; // btn-apply in edit-task popup
+let editPopupCancelBtn; // btn-cancel in edit-task popup
+
 const main = () => {
 	prepareDOMElements();
 	prepareDOMEvents();
@@ -21,6 +32,12 @@ const prepareDOMElements = () => {
 	errorInfo = document.querySelector(".error-info");
 	todoUlList = document.querySelector(".todo-list__ul");
 	allTasks = todoUlList.querySelectorAll(".todo-list__task");
+
+	editPopup = document.querySelector(".edit-task-mobile");
+	editPopupTaskName = editPopup.querySelector(".edit-task__input-tname");
+	editPopupTaskDate = editPopup.querySelector(".edit-task__input-tdate");
+	editPopupApplyBtn = editPopup.querySelector(".edit-task__btn-apply");
+	editPopupCancelBtn = editPopup.querySelector(".edit-task__btn-cancel");
 };
 
 const prepareDOMEvents = () => {
@@ -87,8 +104,7 @@ const checkClick = (e) => {
 		completeTask(e);
 		// console.log("complete");
 	} else if (e.target.matches(".btn-edit")) {
-		// editTodo(e);
-		console.log("edit");
+		editTask(e);
 	} else if (e.target.matches(".btn-delete") || e.target.matches(".fa-xmark")) {
 		deleteTask(e);
 		// console.log("delete");
@@ -113,6 +129,19 @@ const completeTask = (e) => {
 		currentTaskName.classList.add("todo-list__task-name--completed");
 		tmpE.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
 	}
+};
+
+const editTask = (e) => {
+	taskToEdit = e.target.closest("li");
+	editPopup.classList.add("edit-task-mobile--active");
+	taskToEditName = taskToEdit.querySelector(".todo-list__task-name");
+	taskToEditDate = taskToEdit.querySelector(".todo-list__task-date");
+	taskToEditDateStr = taskToEditDate.textContent
+		.replace("[", "")
+		.replace("]", "");
+	console.log(taskToEditDateStr);
+	editPopupTaskName.value = taskToEditName.textContent;
+	// editPopupTaskDate.value = taskToEditDateStr;
 };
 
 const deleteTask = (e) => {
