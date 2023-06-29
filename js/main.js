@@ -136,12 +136,20 @@ const editTask = (e) => {
 	editPopup.classList.add("edit-task-mobile--active");
 	taskToEditName = taskToEdit.querySelector(".todo-list__task-name");
 	taskToEditDate = taskToEdit.querySelector(".todo-list__task-date");
+	// converting date string from task to dateformat YYYY-MM-DD
 	taskToEditDateStr = taskToEditDate.textContent
 		.replace("[", "")
 		.replace("]", "");
-	console.log(taskToEditDateStr);
+	let tmpDd = taskToEditDateStr.slice(0, 2);
+	// console.log(tmpDd);
+	let tmpMm = taskToEditDateStr.slice(3, 5);
+	// console.log(tmpMm);
+	let tmpYyyy = taskToEditDateStr.slice(6, 10);
+	// console.log(tmpYyyy);
+	taskToEditDateStr = `${tmpYyyy}-${tmpMm}-${tmpDd}`;
+	// inserting text from task into inputs in edit-task popup
 	editPopupTaskName.value = taskToEditName.textContent;
-	// editPopupTaskDate.value = taskToEditDateStr;
+	editPopupTaskDate.value = taskToEditDateStr;
 };
 
 const deleteTask = (e) => {
