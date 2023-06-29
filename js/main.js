@@ -13,6 +13,9 @@ let taskToEdit; // currently edited task
 let taskToEditName; // currently edited task task-name
 let taskToEditDate; // currently edited task task-date
 let taskToEditDateStr; // currently edited task task-date string
+let tmpYyyy; // temporarily storing information about date year
+let tmpMm; // temporarily storing information about date month
+let tmpDd; // temporarily storing information about date day
 
 let editPopup; // edit-task popup
 let editPopupTaskName; // task-name input in edit-task popup
@@ -43,6 +46,7 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
 	todoAddBtn.addEventListener("click", addNewTodo);
 	todoUlList.addEventListener("click", checkClick);
+	editPopupApplyBtn.addEventListener("click", changeTaskProperties);
 };
 
 const addNewTodo = () => {
@@ -140,16 +144,32 @@ const editTask = (e) => {
 	taskToEditDateStr = taskToEditDate.textContent
 		.replace("[", "")
 		.replace("]", "");
-	let tmpDd = taskToEditDateStr.slice(0, 2);
+	tmpDd = taskToEditDateStr.slice(0, 2);
 	// console.log(tmpDd);
-	let tmpMm = taskToEditDateStr.slice(3, 5);
+	tmpMm = taskToEditDateStr.slice(3, 5);
 	// console.log(tmpMm);
-	let tmpYyyy = taskToEditDateStr.slice(6, 10);
+	tmpYyyy = taskToEditDateStr.slice(6, 10);
 	// console.log(tmpYyyy);
 	taskToEditDateStr = `${tmpYyyy}-${tmpMm}-${tmpDd}`;
 	// inserting text from task into inputs in edit-task popup
 	editPopupTaskName.value = taskToEditName.textContent;
 	editPopupTaskDate.value = taskToEditDateStr;
+};
+
+const changeTaskProperties = () => {
+	if (editPopupTaskName.value !== "" && editPopupTaskDate.value !== "") {
+		// 2023-12-31
+		tmpYyyy = editPopupTaskDate.value.slice(0, 4);
+		tmpMm = editPopupTaskDate.value.slice(5, 7);
+		tmpDd = editPopupTaskDate.value.slice(8, 10);
+		taskToEditDateStr = `[${tmpDd}.${tmpMm}.${tmpYyyy}]`;
+		taskToEditName.textContent = editPopupTaskName.value;
+		taskToEditDate.textContent = taskToEditDateStr;
+
+		editPopup.classList.remove("edit-task-mobile--active");
+		editPopupTaskName.value = "";
+		editPopupTaskDate.value = "";
+	}
 };
 
 const deleteTask = (e) => {
