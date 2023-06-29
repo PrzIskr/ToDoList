@@ -7,6 +7,7 @@ let newTodoLiText; // text div in recently created li
 let newTodoLiTaskName; // task-name in recently created li
 let newTodoLiTaskDate; // task-date in recently created li
 let todoUlList; // ul inside todo-list div
+let allTasks; // all li tasks inside ul todo-list
 
 const main = () => {
 	prepareDOMElements();
@@ -19,6 +20,7 @@ const prepareDOMElements = () => {
 	todoAddBtn = document.querySelector(".btn-add");
 	errorInfo = document.querySelector(".error-info");
 	todoUlList = document.querySelector(".todo-list__ul");
+	allTasks = todoUlList.querySelectorAll(".todo-list__task");
 };
 
 const prepareDOMEvents = () => {
@@ -82,32 +84,48 @@ const checkClick = (e) => {
 		e.target.matches(".fa-circle") ||
 		e.target.matches(".fa-circle-check")
 	) {
-		// tmp variable for storing e.target if button clicked or e.target.parentElement if icon inside button clicked
-		let tmpE;
-		if (
-			e.target.matches(".fa-circle") ||
-			e.target.matches(".fa-circle-check")
-		) {
-			tmpE = e.target.parentElement;
-		} else {
-			tmpE = e.target;
-		}
-		// adding styles for task-name and changing icon if task is completed or not
-		let currentLi = tmpE.closest("li");
-		let currentTaskName = currentLi.querySelector(".todo-list__task-name");
-		if (currentTaskName.matches(".todo-list__task-name--completed")) {
-			currentTaskName.classList.remove("todo-list__task-name--completed");
-			tmpE.innerHTML = '<i class="fa-regular fa-circle"></i>';
-		} else {
-			currentTaskName.classList.add("todo-list__task-name--completed");
-			tmpE.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-		}
+		completeTask(e);
+		// console.log("complete");
 	} else if (e.target.matches(".btn-edit")) {
 		// editTodo(e);
 		console.log("edit");
-	} else if (e.target.matches(".btn-delete")) {
-		// deleteTodo(e);
-		console.log("delete");
+	} else if (e.target.matches(".btn-delete") || e.target.matches(".fa-xmark")) {
+		deleteTask(e);
+		// console.log("delete");
+	}
+};
+
+const completeTask = (e) => {
+	// tmp variable for storing e.target if button clicked or e.target.parentElement if icon inside button clicked
+	let tmpE;
+	if (e.target.matches(".fa-circle") || e.target.matches(".fa-circle-check")) {
+		tmpE = e.target.parentElement;
+	} else {
+		tmpE = e.target;
+	}
+	// adding styles for task-name and changing icon if task is completed or not
+	let currentLi = tmpE.closest("li");
+	let currentTaskName = currentLi.querySelector(".todo-list__task-name");
+	if (currentTaskName.matches(".todo-list__task-name--completed")) {
+		currentTaskName.classList.remove("todo-list__task-name--completed");
+		tmpE.innerHTML = '<i class="fa-regular fa-circle"></i>';
+	} else {
+		currentTaskName.classList.add("todo-list__task-name--completed");
+		tmpE.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+	}
+};
+
+const deleteTask = (e) => {
+	if (confirm("Are you sure you want to delete this taks?")) {
+		e.target.closest("li").remove();
+	}
+
+	allTasks = todoUlList.querySelectorAll(".todo-list__task");
+
+	if (allTasks.length === 0) {
+		errorInfo.textContent = "No tasks on the list.";
+	} else {
+		errorInfo.textContent = "";
 	}
 };
 
