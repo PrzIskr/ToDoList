@@ -37,6 +37,7 @@
 		}
 
 		.error-info {
+			max-width: none;
 			font-size: 2rem;
 		}
 
@@ -71,6 +72,13 @@
 		.edit-task-mobile__input {
 			height: 32px;
 			font-size: 1.7rem;
+		}
+
+		.edit-task__info {
+			margin-top: 15px;
+			width: 100%;
+			max-width: none;
+			font-size: 2rem;
 		}
 
 		.edit-task-mobile__btns {

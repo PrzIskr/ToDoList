@@ -114,7 +114,8 @@ ul {
   */
 }
 .todo-list .error-info {
-  margin: 5px 0 20px 0;
+  margin: 5px auto 20px;
+  max-width: 172px;
   text-align: center;
   font-size: 1.8rem;
   color: #ec2154;
@@ -203,7 +204,7 @@ ul {
 .edit-task-mobile span {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 10px;
 }
 .edit-task-mobile .edit-task-mobile__inputs {
@@ -225,8 +226,16 @@ ul {
   font-family: inherit;
   font-size: 1.5rem;
 }
+.edit-task-mobile .edit-task__info {
+  margin-top: 10px;
+  width: 80%;
+  max-width: 215px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
 .edit-task-mobile .edit-task-mobile__btns {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .edit-task-mobile .edit-task__btn {
   margin: 0 8px;
@@ -257,6 +266,8 @@ ul {
     width: 75%;
   }
   .todo-list .error-info {
+    margin: 5px auto 20px;
+    max-width: 200px;
     font-size: 1.9rem;
   }
   .todo-list .todo-list__task {
@@ -276,6 +287,10 @@ ul {
   .edit-task-mobile .edit-task-mobile__input {
     height: 30px;
     font-size: 1.6rem;
+  }
+  .edit-task-mobile .edit-task__info {
+    max-width: 230px;
+    font-size: 1.8rem;
   }
   .edit-task-mobile .edit-task-mobile__btns {
     margin-top: 16px;
@@ -312,6 +327,7 @@ ul {
     font-size: 2.5rem;
   }
   .todo-list .error-info {
+    max-width: none;
     font-size: 2rem;
   }
   .todo-list .todo-list__task {
@@ -337,6 +353,12 @@ ul {
   .edit-task-mobile .edit-task-mobile__input {
     height: 32px;
     font-size: 1.7rem;
+  }
+  .edit-task-mobile .edit-task__info {
+    margin-top: 15px;
+    width: 100%;
+    max-width: none;
+    font-size: 2rem;
   }
   .edit-task-mobile .edit-task-mobile__btns {
     margin-top: 22px;

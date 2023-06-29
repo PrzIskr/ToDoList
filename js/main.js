@@ -20,6 +20,7 @@ let tmpDd; // temporarily storing information about date day
 let editPopup; // edit-task popup
 let editPopupTaskName; // task-name input in edit-task popup
 let editPopupTaskDate; // task-date input in edit-task popup
+let editPopupTaskInfo; // task-date info text in edit-task popup
 let editPopupApplyBtn; // btn-apply in edit-task popup
 let editPopupCancelBtn; // btn-cancel in edit-task popup
 
@@ -39,6 +40,7 @@ const prepareDOMElements = () => {
 	editPopup = document.querySelector(".edit-task-mobile");
 	editPopupTaskName = editPopup.querySelector(".edit-task__input-tname");
 	editPopupTaskDate = editPopup.querySelector(".edit-task__input-tdate");
+	editPopupTaskInfo = editPopup.querySelector(".edit-task__info");
 	editPopupApplyBtn = editPopup.querySelector(".edit-task__btn-apply");
 	editPopupCancelBtn = editPopup.querySelector(".edit-task__btn-cancel");
 };
@@ -74,7 +76,7 @@ const addNewTodo = () => {
 		todoInsertTaskName.value = "";
 		todoInsertTaskDate.value = "";
 	} else {
-		errorInfo.textContent = "Insert name and date to add new task!";
+		errorInfo.textContent = "Insert task name and task date to add new task!";
 	}
 };
 
@@ -158,7 +160,6 @@ const editTask = (e) => {
 
 const changeTaskProperties = () => {
 	if (editPopupTaskName.value !== "" && editPopupTaskDate.value !== "") {
-		// 2023-12-31
 		tmpYyyy = editPopupTaskDate.value.slice(0, 4);
 		tmpMm = editPopupTaskDate.value.slice(5, 7);
 		tmpDd = editPopupTaskDate.value.slice(8, 10);
@@ -169,6 +170,10 @@ const changeTaskProperties = () => {
 		editPopup.classList.remove("edit-task-mobile--active");
 		editPopupTaskName.value = "";
 		editPopupTaskDate.value = "";
+		editPopupTaskInfo.textContent = "";
+	} else {
+		editPopupTaskInfo.textContent =
+			"Insert task name and task date to apply changes!";
 	}
 };
 
