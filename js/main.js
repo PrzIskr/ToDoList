@@ -38,6 +38,8 @@ const prepareDOMElements = () => {
 	allTasks = todoUlList.querySelectorAll(".todo-list__task");
 
 	editPopup = document.querySelector(".edit-task-mobile");
+	// editPopup = document.querySelector(".edit-task-desktop");
+
 	editPopupTaskName = editPopup.querySelector(".edit-task__input-tname");
 	editPopupTaskDate = editPopup.querySelector(".edit-task__input-tdate");
 	editPopupTaskInfo = editPopup.querySelector(".edit-task__info");
@@ -48,8 +50,8 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
 	todoAddBtn.addEventListener("click", addNewTodo);
 	todoUlList.addEventListener("click", checkClick);
-	editPopupApplyBtn.addEventListener("click", changeTaskProperties);
-	editPopupCancelBtn.addEventListener("click", closeTaskEditor);
+	// editPopupApplyBtn.addEventListener("click", changeTaskProperties);
+	// editPopupCancelBtn.addEventListener("click", closeTaskEditor);
 };
 
 const addNewTodo = () => {
@@ -140,7 +142,24 @@ const completeTask = (e) => {
 
 const editTask = (e) => {
 	taskToEdit = e.target.closest("li");
-	editPopup.classList.add("edit-task-mobile--active");
+
+	if (window.innerWidth >= 768) {
+		editPopup = document.querySelector(".edit-task-desktop");
+		editPopup.classList.add("edit-task-desktop--active");
+	} else {
+		editPopup = document.querySelector(".edit-task-mobile");
+		editPopup.classList.add("edit-task-mobile--active");
+	}
+
+	editPopupTaskName = editPopup.querySelector(".edit-task__input-tname");
+	editPopupTaskDate = editPopup.querySelector(".edit-task__input-tdate");
+	editPopupTaskInfo = editPopup.querySelector(".edit-task__info");
+	editPopupApplyBtn = editPopup.querySelector(".edit-task__btn-apply");
+	editPopupCancelBtn = editPopup.querySelector(".edit-task__btn-cancel");
+
+	editPopupApplyBtn.addEventListener("click", changeTaskProperties);
+	editPopupCancelBtn.addEventListener("click", closeTaskEditor);
+
 	taskToEditName = taskToEdit.querySelector(".todo-list__task-name");
 	taskToEditDate = taskToEdit.querySelector(".todo-list__task-date");
 	// converting date string from task to dateformat YYYY-MM-DD
@@ -168,7 +187,12 @@ const changeTaskProperties = () => {
 		taskToEditName.textContent = editPopupTaskName.value;
 		taskToEditDate.textContent = taskToEditDateStr;
 
-		editPopup.classList.remove("edit-task-mobile--active");
+		if (window.innerWidth >= 768) {
+			editPopup.classList.remove("edit-task-desktop--active");
+		} else {
+			editPopup.classList.remove("edit-task-mobile--active");
+		}
+
 		editPopupTaskName.value = "";
 		editPopupTaskDate.value = "";
 		editPopupTaskInfo.textContent = "";
@@ -179,7 +203,12 @@ const changeTaskProperties = () => {
 };
 
 const closeTaskEditor = () => {
-	editPopup.classList.remove("edit-task-mobile--active");
+	if (window.innerWidth >= 768) {
+		editPopup.classList.remove("edit-task-desktop--active");
+	} else {
+		editPopup.classList.remove("edit-task-mobile--active");
+	}
+
 	editPopupTaskName.value = "";
 	editPopupTaskDate.value = "";
 	editPopupTaskInfo.textContent = "";
