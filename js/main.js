@@ -49,6 +49,7 @@ const prepareDOMEvents = () => {
 	todoAddBtn.addEventListener("click", addNewTodo);
 	todoUlList.addEventListener("click", checkClick);
 	editPopupApplyBtn.addEventListener("click", changeTaskProperties);
+	editPopupCancelBtn.addEventListener("click", closeTaskEditor);
 };
 
 const addNewTodo = () => {
@@ -175,6 +176,13 @@ const changeTaskProperties = () => {
 		editPopupTaskInfo.textContent =
 			"Insert task name and task date to apply changes!";
 	}
+};
+
+const closeTaskEditor = () => {
+	editPopup.classList.remove("edit-task-mobile--active");
+	editPopupTaskName.value = "";
+	editPopupTaskDate.value = "";
+	editPopupTaskInfo.textContent = "";
 };
 
 const deleteTask = (e) => {
