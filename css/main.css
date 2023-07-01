@@ -130,18 +130,18 @@ ul {
   background-color: #f0e8fb;
   font-size: 1.8rem;
   font-weight: 300;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-          hyphens: auto;
 }
 .todo-list .todo-list__task .todo-list__task-text {
+  width: 90%;
   text-align: center;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 .todo-list .todo-list__task .todo-list__task-name {
   margin-bottom: 5px;
-  font-size: 1.8rem;
   text-align: center;
+  font-size: 1.8rem;
 }
 .todo-list .todo-list__task .todo-list__task-name--completed {
   color: #2c005f;

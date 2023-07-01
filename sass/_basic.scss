@@ -155,19 +155,22 @@ ul {
 		background-color: $light;
 		font-size: 1.8rem;
 		font-weight: 300;
-		// wordwrap
-		overflow-wrap: break-word;
-		word-wrap: break-word;
-		hyphens: auto;
 
 		.todo-list__task-text {
+			width: 90%;
 			text-align: center;
+			// wordwrap
+			//word-wrap: break-word;
+			overflow-wrap: break-word;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
 
 		.todo-list__task-name {
 			margin-bottom: 5px;
-			font-size: 1.8rem;
 			text-align: center;
+			font-size: 1.8rem;
 		}
 
 		.todo-list__task-name--completed {
