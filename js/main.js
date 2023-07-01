@@ -141,12 +141,18 @@ const completeTask = (e) => {
 };
 
 const editTask = (e) => {
-	taskToEdit = e.target.closest("li");
+	editPopupTaskName.value = "";
+	editPopupTaskDate.value = "";
+	editPopupTaskInfo.textContent = "";
+	editPopupApplyBtn = "";
+	editPopupCancelBtn = "";
 
 	if (window.innerWidth >= 768) {
+		editPopup.classList.remove("edit-task-mobile--active");
 		editPopup = document.querySelector(".edit-task-desktop");
 		editPopup.classList.add("edit-task-desktop--active");
 	} else {
+		editPopup.classList.remove("edit-task-desktop--active");
 		editPopup = document.querySelector(".edit-task-mobile");
 		editPopup.classList.add("edit-task-mobile--active");
 	}
@@ -160,6 +166,7 @@ const editTask = (e) => {
 	editPopupApplyBtn.addEventListener("click", changeTaskProperties);
 	editPopupCancelBtn.addEventListener("click", closeTaskEditor);
 
+	taskToEdit = e.target.closest("li");
 	taskToEditName = taskToEdit.querySelector(".todo-list__task-name");
 	taskToEditDate = taskToEdit.querySelector(".todo-list__task-date");
 	// converting date string from task to dateformat YYYY-MM-DD
