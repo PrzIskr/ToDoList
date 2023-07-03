@@ -216,12 +216,40 @@ const editTask = (e) => {
 
 const changeTaskProperties = () => {
 	if (editPopupTaskName.value !== "" && editPopupTaskDate.value !== "") {
+		// adjusting date format to put it into todo-list__task
 		tmpYyyy = editPopupTaskDate.value.slice(0, 4);
 		tmpMm = editPopupTaskDate.value.slice(5, 7);
 		tmpDd = editPopupTaskDate.value.slice(8, 10);
 		taskToEditDateStr = `[${tmpDd}.${tmpMm}.${tmpYyyy}]`;
-		taskToEditName.textContent = editPopupTaskName.value;
-		taskToEditDate.textContent = taskToEditDateStr;
+
+		let currentUl = taskToEdit.closest(".todo-list__ul");
+		setTodoUlListTimeRange(editPopupTaskDate.value);
+
+		if (currentUl === todoUlList) {
+			taskToEditName.textContent = editPopupTaskName.value;
+			taskToEditDate.textContent = taskToEditDateStr;
+		} else {
+			// removing li from the ul list with unmatched date
+			taskToEdit.remove();
+			// creating elements
+			newTodoLi = document.createElement("li");
+			newTodoLiText = document.createElement("div");
+			newTodoLiTaskName = document.createElement("p");
+			newTodoLiTaskDate = document.createElement("p");
+			// adding classes
+			newTodoLi.classList.add("todo-list__task");
+			newTodoLiText.classList.add("todo-list__task-text");
+			newTodoLiTaskName.classList.add("todo-list__task-name");
+			newTodoLiTaskDate.classList.add("todo-list__task-date");
+			// setting text content for todo-task li
+			newTodoLiTaskName.textContent = editPopupTaskName.value;
+			newTodoLiTaskDate.textContent = taskToEditDateStr;
+			// append children
+			todoUlList.append(newTodoLi);
+			newTodoLi.append(newTodoLiText);
+			newTodoLiText.append(newTodoLiTaskName, newTodoLiTaskDate);
+			createTaskBtns();
+		}
 
 		if (window.innerWidth >= 768) {
 			editPopup.classList.remove("edit-task-desktop--active");
