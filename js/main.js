@@ -279,8 +279,21 @@ const closeTaskEditor = () => {
 };
 
 const deleteTask = (e) => {
+	let currentLi = e.target.closest("li");
+	let currentDiv = e.target.closest(".todo-list__div");
+	let currentUlAllTasks;
+	let currentH4 = currentDiv.querySelector(".todo-list__task-time-heading");
+	// console.log(currentUlAllTasks);
+	// console.log(currentDiv);
+	// console.log(currentH4);
+
 	if (confirm("Are you sure you want to delete this taks?")) {
-		e.target.closest("li").remove();
+		currentLi.remove();
+		// hiding h4 if it's necessary (CSS display:none)
+		currentUlAllTasks = currentDiv.querySelectorAll(".todo-list__task");
+		if (currentUlAllTasks.length === 0) {
+			currentH4.classList.remove("todo-list__task-time-heading--active");
+		}
 	}
 
 	allTasks = document.querySelectorAll(".todo-list__task");

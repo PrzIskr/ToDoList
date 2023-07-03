@@ -121,8 +121,12 @@ ul {
   color: #ec2154;
 }
 .todo-list .todo-list__task-time-heading {
+  display: none;
   text-align: center;
   color: #8f6fbd;
+}
+.todo-list .todo-list__task-time-heading--active {
+  display: block;
 }
 .todo-list .todo-list__task {
   display: flex;

@@ -145,9 +145,14 @@ ul {
 	}
 
 	.todo-list__task-time-heading {
+		display: none;
 		// margin-top: 15px;
 		text-align: center;
 		color: $light-violet3;
+	}
+
+	.todo-list__task-time-heading--active {
+		display: block;
 	}
 
 	.todo-list__task {
