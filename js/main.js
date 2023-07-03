@@ -24,18 +24,23 @@ let editPopupTaskInfo; // task-date info text in edit-task popup
 let editPopupApplyBtn; // btn-apply in edit-task popup
 let editPopupCancelBtn; // btn-cancel in edit-task popup
 
+let todayDate; // current date
+
 const main = () => {
 	prepareDOMElements();
 	prepareDOMEvents();
 };
 
 const prepareDOMElements = () => {
+	todayDate = new Date();
+
 	todoInsertTaskName = document.querySelector(".todo-header__input-tname");
 	todoInsertTaskDate = document.querySelector(".todo-header__input-tdate");
 	todoAddBtn = document.querySelector(".btn-add");
 	errorInfo = document.querySelector(".error-info");
-	todoUlList = document.querySelector(".todo-list__ul");
-	allTasks = todoUlList.querySelectorAll(".todo-list__task");
+	// todoUlList = document.querySelector(".todo-list__ul");
+	todoUlList = document.querySelector(".todo-list__ul-7days-tasks");
+	allTasks = document.querySelectorAll(".todo-list__task");
 
 	editPopup = document.querySelector(".edit-task-mobile");
 	// editPopup = document.querySelector(".edit-task-desktop");
@@ -54,8 +59,30 @@ const prepareDOMEvents = () => {
 	// editPopupCancelBtn.addEventListener("click", closeTaskEditor);
 };
 
+const setTodoUlListTimeRange = (e) => {
+	let tmpDate = new Date(e);
+	let dateDifferenceInTime = tmpDate.getTime() - todayDate.getTime();
+	let dateDifferenceInDays = dateDifferenceInTime / (1000 * 3600 * 24);
+
+	if (dateDifferenceInDays < -1) {
+		todoUlList = document.querySelector(".todo-list__ul-past-tasks");
+		// console.log("Past Tasks");
+	} else if (dateDifferenceInDays >= -1 && dateDifferenceInDays <= 7) {
+		todoUlList = document.querySelector(".todo-list__ul-7days-tasks");
+		// console.log("DEADLINE: next 7 days");
+	} else if (dateDifferenceInDays > 7 && dateDifferenceInDays <= 30) {
+		todoUlList = document.querySelector(".todo-list__ul-30days-tasks");
+		// console.log("DEADLINE: next 30 days");
+	} else if (dateDifferenceInDays > 30) {
+		todoUlList = document.querySelector(".todo-list__ul-later-30days-tasks");
+		// console.log("DEADLINE: later than next 30 days");
+	}
+};
+
 const addNewTodo = () => {
 	if (todoInsertTaskName.value !== "" && todoInsertTaskDate.value !== "") {
+		// setting which ul list should be used
+		setTodoUlListTimeRange(todoInsertTaskDate.value);
 		// creating elements
 		newTodoLi = document.createElement("li");
 		newTodoLiText = document.createElement("div");
@@ -66,7 +93,7 @@ const addNewTodo = () => {
 		newTodoLiText.classList.add("todo-list__task-text");
 		newTodoLiTaskName.classList.add("todo-list__task-name");
 		newTodoLiTaskDate.classList.add("todo-list__task-date");
-		// adding text
+		// setting text content for todo-task li
 		newTodoLiTaskName.textContent = todoInsertTaskName.value;
 		newTodoLiTaskDate.textContent = "[" + todoInsertTaskDate.value + "]";
 		// append children
