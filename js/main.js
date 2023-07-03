@@ -6,6 +6,7 @@ let newTodoLi; // recently created todo-list li element
 let newTodoLiText; // text div in recently created li
 let newTodoLiTaskName; // task-name in recently created li
 let newTodoLiTaskDate; // task-date in recently created li
+let todoDiv; // todo-list div
 let todoUlList; // ul inside todo-list div
 let allTasks; // all li tasks inside ul todo-list
 
@@ -38,7 +39,7 @@ const prepareDOMElements = () => {
 	todoInsertTaskDate = document.querySelector(".todo-header__input-tdate");
 	todoAddBtn = document.querySelector(".btn-add");
 	errorInfo = document.querySelector(".error-info");
-	// todoUlList = document.querySelector(".todo-list__ul");
+	todoDiv = document.querySelector(".todo-list");
 	todoUlList = document.querySelector(".todo-list__ul-7days-tasks");
 	allTasks = document.querySelectorAll(".todo-list__task");
 
@@ -54,7 +55,8 @@ const prepareDOMElements = () => {
 
 const prepareDOMEvents = () => {
 	todoAddBtn.addEventListener("click", addNewTodo);
-	todoUlList.addEventListener("click", checkClick);
+	// todoUlList.addEventListener("click", checkClick);
+	todoDiv.addEventListener("click", checkClick);
 	// editPopupApplyBtn.addEventListener("click", changeTaskProperties);
 	// editPopupCancelBtn.addEventListener("click", closeTaskEditor);
 };
@@ -253,7 +255,7 @@ const deleteTask = (e) => {
 		e.target.closest("li").remove();
 	}
 
-	allTasks = todoUlList.querySelectorAll(".todo-list__task");
+	allTasks = document.querySelectorAll(".todo-list__task");
 
 	if (allTasks.length === 0) {
 		errorInfo.textContent = "No tasks on the list.";
