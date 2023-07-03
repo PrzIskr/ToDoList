@@ -137,11 +137,17 @@ ul {
 	}
 
 	.error-info {
-		margin: 5px auto 20px;
+		margin: 0 auto 15px;
 		max-width: 172px;
 		text-align: center;
 		font-size: 1.8rem;
 		color: $red;
+	}
+
+	.todo-list__task-time-heading {
+		// margin-top: 15px;
+		text-align: center;
+		color: $light-violet3;
 	}
 
 	.todo-list__task {

@@ -114,11 +114,15 @@ ul {
   */
 }
 .todo-list .error-info {
-  margin: 5px auto 20px;
+  margin: 0 auto 15px;
   max-width: 172px;
   text-align: center;
   font-size: 1.8rem;
   color: #ec2154;
+}
+.todo-list .todo-list__task-time-heading {
+  text-align: center;
+  color: #8f6fbd;
 }
 .todo-list .todo-list__task {
   display: flex;
@@ -266,9 +270,11 @@ ul {
     width: 75%;
   }
   .todo-list .error-info {
-    margin: 5px auto 20px;
     max-width: 200px;
     font-size: 1.9rem;
+  }
+  .todo-list .todo-list__task-time-heading {
+    font-size: 1.7rem;
   }
   .todo-list .todo-list__task {
     padding: 22px;
@@ -329,6 +335,9 @@ ul {
   .todo-list .error-info {
     max-width: none;
     font-size: 2rem;
+  }
+  .todo-list .todo-list__task-time-heading {
+    font-size: 1.8rem;
   }
   .todo-list .todo-list__task {
     padding: 28px 32px 10px 32px;
@@ -410,6 +419,9 @@ ul {
   }
   .todo-list .error-info {
     font-size: 2.1rem;
+  }
+  .todo-list .todo-list__task-time-heading {
+    font-size: 1.9rem;
   }
   .todo-list .todo-list__task {
     flex-direction: row;
@@ -534,6 +546,9 @@ ul {
   .todo-list .error-info {
     font-size: 2.2rem;
   }
+  .todo-list .todo-list__task-time-heading {
+    font-size: 2rem;
+  }
   .todo-list .todo-list__task {
     padding-right: 7px;
   }
@@ -600,6 +615,9 @@ ul {
   .todo-list .error-info {
     margin: 8px 0 22px 0;
     font-size: 2.3rem;
+  }
+  .todo-list .todo-list__task-time-heading {
+    font-size: 2.1rem;
   }
   .edit-task-desktop {
     width: 980px;
