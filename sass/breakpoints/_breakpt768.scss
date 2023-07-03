@@ -95,6 +95,7 @@
 		background-color: $main-color;
 		background: linear-gradient(0deg, $sec-c-dark 0%, $main-c-dark 100%);
 		box-shadow: 0px 0px 3px $main-color;
+		transition: transform 0.3s;
 		color: $white;
 		z-index: 10;
 
