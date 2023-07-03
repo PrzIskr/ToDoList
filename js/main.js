@@ -85,12 +85,23 @@ const addNewTodo = () => {
 	if (todoInsertTaskName.value !== "" && todoInsertTaskDate.value !== "") {
 		// setting which ul list should be used
 		setTodoUlListTimeRange(todoInsertTaskDate.value);
-		// creating elements
+		// variables for dispalying task-time-heading
+		let todoUlListDiv;
+		let todoUlListAllTasks;
+		let todoUlListH4;
+		// displaying h4 if it's necessary (CSS display:block)
+		todoUlListDiv = todoUlList.closest(".todo-list__div");
+		todoUlListAllTasks = todoUlListDiv.querySelectorAll(".todo-list__task");
+		todoUlListH4 = todoUlListDiv.querySelector(".todo-list__task-time-heading");
+		if (todoUlListAllTasks.length === 0) {
+			todoUlListH4.classList.add("todo-list__task-time-heading--active");
+		}
+		// creating elements necessary for new task
 		newTodoLi = document.createElement("li");
 		newTodoLiText = document.createElement("div");
 		newTodoLiTaskName = document.createElement("p");
 		newTodoLiTaskDate = document.createElement("p");
-		// adding classes
+		// adding classes to a new task
 		newTodoLi.classList.add("todo-list__task");
 		newTodoLiText.classList.add("todo-list__task-text");
 		newTodoLiTaskName.classList.add("todo-list__task-name");
@@ -102,6 +113,7 @@ const addNewTodo = () => {
 		todoUlList.append(newTodoLi);
 		newTodoLi.append(newTodoLiText);
 		newTodoLiText.append(newTodoLiTaskName, newTodoLiTaskDate);
+		// creating and appending buttons section inside taks
 		createTaskBtns();
 		// clearing inputs and errors
 		errorInfo.textContent = "";
