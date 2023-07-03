@@ -221,8 +221,16 @@ const changeTaskProperties = () => {
 		tmpMm = editPopupTaskDate.value.slice(5, 7);
 		tmpDd = editPopupTaskDate.value.slice(8, 10);
 		taskToEditDateStr = `[${tmpDd}.${tmpMm}.${tmpYyyy}]`;
-
+		// variables for target list
+		let todoUlListDiv;
+		let todoUlListAllTasks;
+		let todoUlListH4;
+		// selecting elements from current ul list
 		let currentUl = taskToEdit.closest(".todo-list__ul");
+		let currentDiv = taskToEdit.closest(".todo-list__div");
+		let currentH4 = currentDiv.querySelector(".todo-list__task-time-heading");
+		let currentUlAllTasks;
+		// setting which ul list should be used
 		setTodoUlListTimeRange(editPopupTaskDate.value);
 
 		if (currentUl === todoUlList) {
@@ -231,6 +239,24 @@ const changeTaskProperties = () => {
 		} else {
 			// removing li from the ul list with unmatched date
 			taskToEdit.remove();
+
+			// hiding h4 if it's necessary (CSS display:none)
+			currentUlAllTasks = currentDiv.querySelectorAll(".todo-list__task");
+			console.log(currentUlAllTasks);
+			if (currentUlAllTasks.length === 0) {
+				currentH4.classList.remove("todo-list__task-time-heading--active");
+			}
+
+			// displaying h4 if it's necessary (CSS display:block)
+			todoUlListDiv = todoUlList.closest(".todo-list__div");
+			todoUlListAllTasks = todoUlListDiv.querySelectorAll(".todo-list__task");
+			todoUlListH4 = todoUlListDiv.querySelector(
+				".todo-list__task-time-heading"
+			);
+			if (todoUlListAllTasks.length === 0) {
+				todoUlListH4.classList.add("todo-list__task-time-heading--active");
+			}
+
 			// creating elements
 			newTodoLi = document.createElement("li");
 			newTodoLiText = document.createElement("div");
@@ -244,7 +270,7 @@ const changeTaskProperties = () => {
 			// setting text content for todo-task li
 			newTodoLiTaskName.textContent = editPopupTaskName.value;
 			newTodoLiTaskDate.textContent = taskToEditDateStr;
-			// append children
+			// append children - adding to ul list the ul list with matching date
 			todoUlList.append(newTodoLi);
 			newTodoLi.append(newTodoLiText);
 			newTodoLiText.append(newTodoLiTaskName, newTodoLiTaskDate);
@@ -281,11 +307,8 @@ const closeTaskEditor = () => {
 const deleteTask = (e) => {
 	let currentLi = e.target.closest("li");
 	let currentDiv = e.target.closest(".todo-list__div");
-	let currentUlAllTasks;
 	let currentH4 = currentDiv.querySelector(".todo-list__task-time-heading");
-	// console.log(currentUlAllTasks);
-	// console.log(currentDiv);
-	// console.log(currentH4);
+	let currentUlAllTasks;
 
 	if (confirm("Are you sure you want to delete this taks?")) {
 		currentLi.remove();
