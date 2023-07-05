@@ -120,7 +120,7 @@ const addNewTodo = () => {
 		todoInsertTaskName.value = "";
 		todoInsertTaskDate.value = "";
 	} else {
-		errorInfo.textContent = "Insert task name and task date to add new task!";
+		errorInfo.textContent = "Insert task name and task date to add a new task!";
 	}
 };
 
